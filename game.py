@@ -81,3 +81,28 @@ def take_bet(chips):
             chips.total))
       else:
         break
+
+
+def hit(deck, hand):
+  single_card = deck.deal()
+  hand.add_card(single_card)
+  hand.adjust_for_ace()
+
+
+def (hit_or_stand):
+  global playing
+
+  while True:
+    x = input("Hit or Stand? H/s: ")
+
+    if x[0].lower() == 'h':
+      hit(deck, hand)
+    elif x[0].lower() == 's':
+      print("Player Stands. Dealer's Turn")
+      playing = False
+
+  else:
+    print("Sorry, I didn't understand that. Please enter h or s only")
+    continue
+
+  break
