@@ -59,4 +59,11 @@ class Hand():
 
 class Chip():
   def __init__(self):
-    pass
+    self.total = 100
+    self.bet = 0
+
+  def win_bet(self):
+    self.total += self.bet
+
+  def lost_bet(self):
+    self.total -= self.bet
