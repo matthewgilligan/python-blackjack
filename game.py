@@ -39,6 +39,24 @@ class Deck():
     return single_card
 
 
-test_deck = Deck()
-test_deck.shuffle()
-print(test_deck)
+class Hand():
+  def __init__(self):
+    self.cards = []
+    self.value = 0
+    self.aces = 0
+
+  def add_card(self, card):
+    self.cards.append(card)
+    self.value += values[card.rank]
+    if card.rank == 'Ace':
+      self.aces += 1
+
+  def adjust_for_ace(self):
+    while self.value > 21 and self.aces:
+      self.value -= 10
+      self.aces -= 1
+
+
+class Chip():
+  def __init__(self):
+    pass
